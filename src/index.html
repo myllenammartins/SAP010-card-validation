@@ -5,10 +5,39 @@
     <title>Tarjeta de crédito válida</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <header></header>
+
+    <header>
+      <center>
+        <h1> Valide seu cartão </h1>
+        <p> Para processar o seu pagamento com segurança, precisamos que valide o seu cartão</p>
+      </center>
+    </header>
+
+      <center>
+        <P> Insira abaixo o número do seu cartão </P>
+
+          <form>
+            <label>
+               <input maxlength="19" type="text" nome="numeroDoCartao" placeholder="Número do cartão" required>
+            </label>
+
+            <label>
+              <div>
+               <input type="submit" value="validar" onclick="validarCartao">
+              </div>
+            </label>
+          </form>
+      </center>
+
     <main></main>
-    <footer></footer>
+
+  
+    <footer>
+    </footer>
+    
+
     <script src="index.js" type="module"></script>
   </body>
 </html>
