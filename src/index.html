@@ -18,14 +18,14 @@
       <center>
         <P> Insira abaixo o número do seu cartão </P>
 
-          <form>
+          <form id="form">
             <label>
-               <input maxlength="19" type="text" nome="numeroDoCartao" placeholder="Número do cartão" required>
+               <input type="text" maxlength="19" id="numeroDoCartao" placeholder="Número do cartão" required>
             </label>
-
+               <small id="textform"></small>
             <label>
               <div>
-               <input type="submit" value="validar" onclick="validarCartao">
+               <button class="buttonValid" id="Validar" value="Validar" type="submit"> Validar </button>
               </div>
             </label>
           </form>
