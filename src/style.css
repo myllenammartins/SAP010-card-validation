@@ -5,3 +5,25 @@ input:invalid {
 input:valid {
     border: 2px solid black;
   }
+
+
+body {
+  background: rgba(130, 161, 226, 0.836);
+  font-family: 'lato', sans-serif;
+}
+
+
+
+.cartao {
+	background: #ffffffaf;
+	width: 100%;
+	max-width: 400px;
+	padding: 150px 30px 20px 30px;
+	border-radius: 10px;
+	position: center;
+	top: -150px;
+  display: flex;
+}
+
+
+

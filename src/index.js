@@ -25,10 +25,13 @@ form.addEventListener("submit" , (event) =>{
         //console para ver se os dados estao entranto no terminal
          console.log(numeroDoCartao.value);
     }
-
     //o preventdefault esta empedindo de que a pagina carregue e os dados do cartao no campo sumam
     event.preventDefault()
 })
+
+
+
+
 
 
 //o comando abaixo serve para chamar o numeroDoCartao
