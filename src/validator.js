@@ -1,15 +1,14 @@
 const validator = {
-  maskify: function (nunCard) {
-
+  maskify: function () {
+    
   },
 
 
-  isValid: function validarcartao(nunCard) {
-    let validarcartao = (/\D/g,"");
-    return validarcartao.test(nunCard)
+  isValid: function () {
+
   }
 
-};
+}
 
 export default validator;
 

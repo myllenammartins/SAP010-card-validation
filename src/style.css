@@ -1,5 +1,5 @@
 input:invalid {
-    border: 1px solid red;
+    border: 1px solid rgba(255, 0, 0, 0.774);
   }
   
 input:valid {
@@ -14,7 +14,7 @@ body {
 
 
 .cartao {
-	background: #ffffff86;
+	background: #ffffff6c;
 	width: 100%;
 	max-width: 400px;
 	padding: 150px 30px 20px 30px;
