@@ -2,9 +2,8 @@ import validator from './validator.js';
 
 console.log(validator);
 
-
-const inputNumero = document.getElementById ("inputNumero");
 const form        = document.getElementById ("form");
+const inputNumero = document.getElementById ("inputNumero");
 const textform    = document.getElementById ("textform");
 const aparecer    = document.getElementById ("aparecer")
 
@@ -25,13 +24,13 @@ form.addEventListener("submit" , (event) =>{
 //para acessar o campo de formulario (ver se os numeros estao entrando cada)
 inputNumero.addEventListener("keyup" , (e) => {
   const valorInput = e.target.value;
-  //tira espaços em brando
+  //remove espaços em brando
   inputNumero.value = valorInput.replace(/\s/g, '')
-  //tira letras
+  //remove letras
     .replace(/\D/g, '')
     //da espaço a cada quatro numeros
     .replace(/([0-9]{4})/g, '$1 ')
-    //tira o ultimo espaçamento
+    //remove o ultimo espaçamento
     .trim();
   aparecer.textContent = valorInput;
   if(valorInput === ''){

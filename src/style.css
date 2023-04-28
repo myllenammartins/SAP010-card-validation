@@ -6,22 +6,69 @@ input:valid {
     border: 2px solid black;
   }
 
-
 body {
-  background: rgba(159, 186, 247, 0.836);
-  font-family: 'lato', sans-serif;
+	width: 100%;
+	height: 100vh;
+    background: rgba(204, 192, 214, 0.836);
+    font-family: 'Ysabeau', sans-serif;
+}
+
+* {
+	margin: o;
+	padding: o;
+}
+
+input {
+	min-width: 280px;
+	border: 2px #f6f6f8ad;
+	border-radius: 22px;
+	padding: 5px;
+	margin: 0px 8px 12px -5px;
+} 
+
+#form {
+	position: relative;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #f3f7f76c;
+	border-radius: 50px;
+	padding: 30px;
+	width: max-content;
+	align-items: center;
+}
+
+#btn {
+	text-align: center;
+}
+
+#btn button {
+	font-family: 'poppins', sans-serif;
+	background:#fafbfc;
+	width: 20%;
+	height: 40%;
+	border: none;
+	font-size: 1.2em;
+	border-radius: 20px;
+	outline: none; 
+	cursor: pointer; /* serve para mundar o cursos para point */
+}
+
+#btn button:hover { /* serve para mudar a cor assim que o cursor estiver em cima*/
+	background: #a687b342;
 }
 
 
+
 .cartao {
-	background: #ffffff6c;
+	background: #8123ad;
 	width: 100%;
 	max-width: 400px;
 	padding: 150px 30px 20px 30px;
 	border-radius: 10px;
 	position: center;
 	top: -150px;
-  display: flex;
+    display: flex;
 }
 
 .centralizar {
