@@ -1,17 +1,26 @@
 const validator = {
-  maskify: function () {
-    
+
+  maskify: function (carDigito) {
+
+    const numString = String(carDigito).replace(/\s/g, '');
+    const lastFourDigits = numString.slice(-4);
+    const maskedDigits = numString.slice(0, -4).replace(/\d/g, '*');
+
+    return maskedDigits + lastFourDigits;
+
   },
 
-  isValid: function isValid(numero) {
+  isValid: function (inputNumero) {
     //remove espaços em branco e Transforma o número em string
-    const numString = String(numero).replace(/\s/g, '');
+    const numString = String(inputNumero).replace(/\s/g, '');
     //converte os números do cartao em um array
     const numAr = numString.split('').map(Number);
     //inverte o array dos numeros para começar a partir do final
     const invertAr = numAr.reverse();
+
     //inicia a soma em 0
     let soma = 0;
+
     //loop pelos numeros, multiplicando por 2 os índices pares
     for (let i = 0; i < invertAr.length; i++) {
       //se o numero for par, multiplica por 2
@@ -29,10 +38,10 @@ const validator = {
       }
     }
     //se a soma for um múltiplo de 10, retorna verdadeiro caso contrario é falso
-    return soma % 10 === 0;
-  }
-  
 
-}
+    return soma % 10 === 0;
+
+  }
+};
 
 export default validator;

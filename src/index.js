@@ -2,20 +2,27 @@ import validator from './validator.js';
 
 console.log(validator);
 
+
 const form        = document.getElementById ("form");
 const inputNumero = document.getElementById ("inputNumero");
 const textform    = document.getElementById ("textform");
-const aparecer    = document.getElementById ("aparecer")
+const carDigito   = document.getElementById ("carDigito");
 
 form.addEventListener("submit" , (event) =>{
 //nao deixa que envie valor em branco para o terminal
   if(inputNumero.value === ''){
     //o textform exibe mensagem 'campo obrigatorio'
     textform.textContent = 'Campo Obrigatório'
-  }
-  else {
-    //console para ver se os dados estao entranto no terminal
-    console.log(inputNumero.value);
+  } else {
+    const valorInput = inputNumero.value.replace(/\s/g, '').replace(/\D/g, '');
+    if (validator.isValid(valorInput)) {
+      alert('Cartão válido!');
+    } else {
+      alert('Cartão inválido!');
+    }
+ 
+
+
   }
   //o preventdefault esta empedindo de que a pagina carregue e os dados do cartao no campo sumam
   event.preventDefault()
@@ -32,8 +39,8 @@ inputNumero.addEventListener("keyup" , (e) => {
     .replace(/([0-9]{4})/g, '$1 ')
     //remove o ultimo espaçamento
     .trim();
-  aparecer.textContent = valorInput;
+  carDigito.textContent = valorInput;
   if(valorInput === ''){
-    aparecer.textContent = '0000 0000 0000 0000';
+    carDigito.textContent = '0000 0000 0000 0000';
   }
 });
