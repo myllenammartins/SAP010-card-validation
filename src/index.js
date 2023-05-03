@@ -20,7 +20,7 @@ form.addEventListener("submit" , (event) =>{
     if (validator.isValid(valorInput)) {
       alert(`Cartão válido! final: ${numEscondido}`);
     }else {
-      alert('Cartão inválido!');
+      alert(`Cartão inválido! final: ${numEscondido}`);
     }
   }
 

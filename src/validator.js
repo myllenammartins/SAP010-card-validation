@@ -2,17 +2,15 @@ const validator = {
 
   maskify: function (inputNumero) {
 
-    const caractere = '#';
+    const caractere       = '#';
     const numerosvisiveis = 4;
 
     if (inputNumero.length <= numerosvisiveis){
       return inputNumero;
     }
-    const mascarar = inputNumero.length - numerosvisiveis;
+    const mascarar  = inputNumero.length - numerosvisiveis;
     const resultado = caractere.repeat(mascarar) + inputNumero.slice(-numerosvisiveis);
     return resultado;
-
-  
   
     /*// remove espaços em branco do numero do cartao
     const  numString  =  String (inputNumero).replace(/\s/g, '');
