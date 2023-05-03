@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tarjeta de crédito válida</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+    <header>
+      <center>
+        <h1> Valide seu cartão </h1>
+      </center>
+    </header>
+
+    <div id="form">
+      <form action="">
+          <p> <strong> <h4> Para processar o seu pagamento com segurança, precisamos que valide o seu cartão </h4></strong></p>
+          <center><p> Insira abaixo o número do seu cartão</p> 
+
+              <label for="inputNumero">Número do cartão</label>
+              <div class="input">
+                <input type="text" maxlength="19" id="inputNumero" placeholder="0000 0000 0000 0000" required>
+              </div>
+          
+              <small id="textform"></small>
+            
+              <div id="btn">
+                <button class="buttonValid" id="Validar" value="Validar" type="submit"> Validar </button>
+              </div>
+            </center>
+      </form>
+    </div>
+
+            <div class ="centralizar" >
+              <div id ="cartao" class ="cartao">
+                <div>
+                  <p> Número do cartão </p>
+                    <div id ="numero" >
+                      <p id="carDigito">0000 0000 0000 0000</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+        
+    <main></main>
+    <footer></footer>
+    
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
