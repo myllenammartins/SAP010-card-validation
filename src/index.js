@@ -1,12 +1,12 @@
 import validator from './validator.js';
 
-console.log(validator);
-
+console.log(validator)
 
 const form        = document.getElementById ("form");
 const inputNumero = document.getElementById ("inputNumero");
 const textform    = document.getElementById ("textform");
 const carDigito   = document.getElementById ("carDigito");
+
 
 form.addEventListener("submit" , (event) =>{
 //nao deixa que envie valor em branco para o terminal
@@ -14,16 +14,18 @@ form.addEventListener("submit" , (event) =>{
     //o textform exibe mensagem 'campo obrigatorio'
     textform.textContent = 'Campo Obrigatório'
   } else {
-    const valorInput = inputNumero.value.replace(/\s/g, '').replace(/\D/g, '');
+    const valorInput   = inputNumero.value.replace(/\s/g, '').replace(/\D/g, '');
+    const numEscondido = validator.maskify(valorInput);
+
     if (validator.isValid(valorInput)) {
-      alert('Cartão válido!');
-    } else {
+      alert(`Cartão válido! final: ${numEscondido}`);
+    }else {
       alert('Cartão inválido!');
     }
- 
-
-
   }
+
+  console.log(inputNumero.value);
+
   //o preventdefault esta empedindo de que a pagina carregue e os dados do cartao no campo sumam
   event.preventDefault()
 })
@@ -33,7 +35,7 @@ inputNumero.addEventListener("keyup" , (e) => {
   const valorInput = e.target.value;
   //remove espaços em brando
   inputNumero.value = valorInput.replace(/\s/g, '')
-  //remove letras
+    //remove letras
     .replace(/\D/g, '')
     //da espaço a cada quatro numeros
     .replace(/([0-9]{4})/g, '$1 ')

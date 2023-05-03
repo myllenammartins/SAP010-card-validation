@@ -1,12 +1,29 @@
 const validator = {
 
-  maskify: function (carDigito) {
+  maskify: function (inputNumero) {
 
-    const numString = String(carDigito).replace(/\s/g, '');
+    const caractere = '#';
+    const numerosvisiveis = 4;
+
+    if (inputNumero.length <= numerosvisiveis){
+      return inputNumero;
+    }
+    const mascarar = inputNumero.length - numerosvisiveis;
+    const resultado = caractere.repeat(mascarar) + inputNumero.slice(-numerosvisiveis);
+    return resultado;
+
+  
+  
+    /*// remove espaços em branco do numero do cartao
+    const  numString  =  String (inputNumero).replace(/\s/g, '');
+    // armazena os ultimos quatro digitos do cartao
     const lastFourDigits = numString.slice(-4);
+    // esconde os digitos, exceto os ultimos quatro
     const maskedDigits = numString.slice(0, -4).replace(/\d/g, '*');
+    //concatena
+    const carMask = maskedDigits + lastFourDigits;
 
-    return maskedDigits + lastFourDigits;
+    return carMask;*/
 
   },
 
@@ -14,9 +31,9 @@ const validator = {
     //remove espaços em branco e Transforma o número em string
     const numString = String(inputNumero).replace(/\s/g, '');
     //converte os números do cartao em um array
-    const numAr = numString.split('').map(Number);
+    const numAr     = numString.split('').map(Number);
     //inverte o array dos numeros para começar a partir do final
-    const invertAr = numAr.reverse();
+    const invertAr  = numAr.reverse();
 
     //inicia a soma em 0
     let soma = 0;
@@ -38,10 +55,7 @@ const validator = {
       }
     }
     //se a soma for um múltiplo de 10, retorna verdadeiro caso contrario é falso
-
     return soma % 10 === 0;
-
   }
 };
-
 export default validator;
